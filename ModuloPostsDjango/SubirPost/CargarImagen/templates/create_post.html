@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subir post</title>
+</head>
+<body>
+    <h1>Formulario de Imágenes</h1>
+    <form action="/create_post/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ post_form.as_p }}
+        <button type="submit">Subir Imagen</button>
+    </form>
+
+    {% if posts %}
+    <h2>Comentarios e imágenes subidas:</h2>
+        {% for post in posts %}
+        <img src="{{ post.image.url }}">
+        <p>Comentario: {{ post.comment }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
