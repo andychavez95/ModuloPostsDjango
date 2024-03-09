@@ -12,6 +12,14 @@ __pycache__/
 # Ignorar entorno de Python.
 dev-env/
 
+# Ignorar carpeta de imagenes.
+images/
+
+# Ignorar archivos de imagenes.
+*.jpg
+*.jpeg
+*.png
+
 # Distribution / packaging
 .Python
 build/
