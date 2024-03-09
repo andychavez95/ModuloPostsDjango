@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Formulario de Imágenes</h1>
-    <form action="/create_post/" method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ post_form.as_p }}
         <button type="submit">Subir Imagen</button>
@@ -18,7 +18,7 @@
     {% if posts %}
     <h2>Comentarios e imágenes subidas:</h2>
         {% for post in posts %}
-        <img src="{{ post.image.url }}">
+        <img src="{{ post.image.url }}" width="100">
         <p>Comentario: {{ post.comment }}</p>
         {% endfor %}
     {% endif %}
